@@ -2,10 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent" android:layout_height="?android:attr/listPreferredItemHeight"
     android:padding="6dip">
-    <CheckBox android:text="complete" android:id="@+id/checkBox"
-        android:layout_width="wrap_content" android:layout_alignParentRight="true"
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:clickable="true"
         android:focusable="false"
-        android:layout_centerVertical="true" android:layout_height="wrap_content" />
+        android:onClick="checkBoxClicked"
+        android:text="complete" />
 
     <LinearLayout android:orientation="vertical"
         android:layout_toLeftOf="@+id/checkBox" android:layout_width="fill_parent"

@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         String taskTitle = taskTitleEditText.getText().toString();
         String taskDescription = taskDescriptionEditText.getText().toString();
-
+        
         taskTitleEditText.setText("");
         taskDescriptionEditText.setText("");
         Task newTask = new Task(taskTitle, taskDescription);
@@ -56,6 +56,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void checkBoxClicked(View view) {
+
+        int position = (Integer) view.getTag();
+
+        tasks.remove(position);
+        saveData();
+        TaskAdapter adapter = new TaskAdapter(this, R.layout.adapter_view_laylout, tasks);
+        ListView listView = findViewById(R.id.listView);
+        listView.setAdapter(adapter);
+        Toast.makeText(MainActivity.this, "Task Completed", Toast.LENGTH_SHORT).show();
+    }
+
     /**
      *
      * @param savedInstanceState
@@ -67,17 +79,10 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: started");
 
         final ListView listView = findViewById(R.id.listView);
+        final CheckBox checkBox = findViewById(R.id.checkBox);
         loadData();
         final TaskAdapter adapter = new TaskAdapter(this, R.layout.adapter_view_laylout, tasks);
         listView.setAdapter(adapter);
-        CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
-
-        checkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "hello", Toast.LENGTH_SHORT).show();
-            }
-        });
 
 
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -97,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+
 
 
 

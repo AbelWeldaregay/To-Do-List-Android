@@ -2,10 +2,13 @@ package com.example.abelweldareguy.todolist;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -45,6 +48,7 @@ public class TaskAdapter extends ArrayAdapter<Task> {
         String taskTitle = getItem(position).getTaskTitle();
         String taskDescription = getItem(position).getTaskDescription();
 
+
         Task task = new Task(taskTitle, taskDescription);
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
@@ -52,6 +56,17 @@ public class TaskAdapter extends ArrayAdapter<Task> {
 
         TextView taskTitleTextView = (TextView) convertView.findViewById(R.id.taskTitle);
         TextView taskDescTextView = (TextView) convertView.findViewById(R.id.taskDescription);
+        CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.checkBox);
+        checkBox.setTag(position);
+
+//        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                int position = (Integer) buttonView.getTag();
+//
+//                Log.i("tag ", Integer.toString(position));
+//            }
+//        });
 
         taskTitleTextView.setText(taskTitle);
         taskDescTextView.setText(taskDescription);
