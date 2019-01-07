@@ -20,7 +20,7 @@
         <TextView android:id="@+id/taskTitle" android:layout_width="fill_parent"
             android:layout_height="wrap_content" android:layout_weight="1"
             android:gravity="center_vertical" android:textSize="18sp"
-            android:textColor="#FFFFFF" android:background="#FFAABB" />
+            android:textColor="#FFFFFF" android:background="@color/colorPrimaryDark" />
 
         <TextView android:layout_width="fill_parent"
             android:layout_height="wrap_content" android:layout_weight="1" android:id="@+id/taskDescription"
