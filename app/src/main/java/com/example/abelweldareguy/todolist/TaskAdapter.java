@@ -21,6 +21,17 @@ public class TaskAdapter extends ArrayAdapter<Task> {
     public static final String TAG = "TaskAdapter";
     private Context mContext;
     private  int mResource;
+
+    /**
+     * Holds variables for in a View
+     * @author Abel Weldaregay
+     */
+    static class ViewHolder {
+        TextView taskTitle;
+        TextView taskDescription;
+        CheckBox checkBox;
+    }
+
     /**
      *
      * @param context
@@ -51,16 +62,43 @@ public class TaskAdapter extends ArrayAdapter<Task> {
 
         Task task = new Task(taskTitle, taskDescription);
 
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        convertView = inflater.inflate(mResource, parent, false);
 
-        TextView taskTitleTextView = (TextView) convertView.findViewById(R.id.taskTitle);
-        TextView taskDescTextView = (TextView) convertView.findViewById(R.id.taskDescription);
-        CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.checkBox);
-        checkBox.setTag(position);
 
-        taskTitleTextView.setText(taskTitle);
-        taskDescTextView.setText(taskDescription);
+
+
+        ViewHolder holder;
+
+
+
+        if(convertView == null) {
+
+            LayoutInflater inflater = LayoutInflater.from(mContext);
+            convertView = inflater.inflate(mResource, parent, false);
+
+            holder = new ViewHolder();
+            holder.taskTitle = (TextView) convertView.findViewById(R.id.taskTitle);
+            holder.taskDescription = (TextView) convertView.findViewById(R.id.taskDescription);
+            holder.checkBox = (CheckBox) convertView.findViewById(R.id.checkBox);
+            convertView.setTag(holder);
+
+        } else {
+
+            holder = (ViewHolder) convertView.getTag();
+        }
+
+
+//        TextView taskTitleTextView = (TextView) convertView.findViewById(R.id.taskTitle);
+//        TextView taskDescTextView = (TextView) convertView.findViewById(R.id.taskDescription);
+//        CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.checkBox);
+        //checkBox.setTag(position);
+        holder.checkBox.setTag(position);
+
+        //taskTitleTextView.setText(taskTitle);
+        //taskDescTextView.setText(taskDescription);
+
+        holder.taskTitle.setText(taskTitle);
+        holder.taskDescription.setText(taskDescription);
+
 
         return convertView;
 
