@@ -2,19 +2,14 @@ package com.example.abelweldareguy.todolist;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class TaskAdapter extends ArrayAdapter<Task> {
 
@@ -62,13 +57,7 @@ public class TaskAdapter extends ArrayAdapter<Task> {
 
         Task task = new Task(taskTitle, taskDescription);
 
-
-
-
-
         ViewHolder holder;
-
-
 
         if(convertView == null) {
 
@@ -86,15 +75,7 @@ public class TaskAdapter extends ArrayAdapter<Task> {
             holder = (ViewHolder) convertView.getTag();
         }
 
-
-//        TextView taskTitleTextView = (TextView) convertView.findViewById(R.id.taskTitle);
-//        TextView taskDescTextView = (TextView) convertView.findViewById(R.id.taskDescription);
-//        CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.checkBox);
-        //checkBox.setTag(position);
         holder.checkBox.setTag(position);
-
-        //taskTitleTextView.setText(taskTitle);
-        //taskDescTextView.setText(taskDescription);
 
         holder.taskTitle.setText(taskTitle);
         holder.taskDescription.setText(taskDescription);

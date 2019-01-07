@@ -6,23 +6,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.Toast;
-
 import java.lang.reflect.*;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Abel Weldaregay
@@ -30,6 +21,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
+    public static final String FILE_NAME = "TaskList";
     ArrayList<Task> tasks = new ArrayList<>();
     /**
      *
@@ -64,7 +56,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Removes task to task list when checkbox is clicked
+     * @param view
+     */
     public void checkBoxClicked(View view) {
 
         int position = (Integer) view.getTag();
@@ -73,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         saveData();
         TaskAdapter adapter = new TaskAdapter(this, R.layout.adapter_view_laylout, tasks);
         ListView listView = findViewById(R.id.listView);
+        listView.animate();
         listView.setAdapter(adapter);
         Toast.makeText(MainActivity.this, "Task Completed", Toast.LENGTH_SHORT).show();
     }
@@ -113,17 +109,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
-
-
-
     }
 
 
+    /**
+     * Saves tasks to a txt file
+     */
     private void saveData(){
 
-        SharedPreferences sharedPreferences = getSharedPreferences("shared prefrences", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences(FILE_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
 
@@ -133,8 +127,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Reads data from a text file
+     */
     private void loadData() {
-        SharedPreferences sharedPreferences = getSharedPreferences("shared prefrences", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences(FILE_NAME, MODE_PRIVATE);
         Gson gson = new Gson();
         String json = sharedPreferences.getString("task list", null);
         Type type = new TypeToken< ArrayList<Task> >() {}.getType();
