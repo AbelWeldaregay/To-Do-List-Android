@@ -59,15 +59,6 @@ public class TaskAdapter extends ArrayAdapter<Task> {
         CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.checkBox);
         checkBox.setTag(position);
 
-//        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                int position = (Integer) buttonView.getTag();
-//
-//                Log.i("tag ", Integer.toString(position));
-//            }
-//        });
-
         taskTitleTextView.setText(taskTitle);
         taskDescTextView.setText(taskDescription);
 

@@ -42,16 +42,25 @@ public class MainActivity extends AppCompatActivity {
 
         String taskTitle = taskTitleEditText.getText().toString();
         String taskDescription = taskDescriptionEditText.getText().toString();
-        
-        taskTitleEditText.setText("");
-        taskDescriptionEditText.setText("");
-        Task newTask = new Task(taskTitle, taskDescription);
-        tasks.add(newTask);
-        saveData();
-        TaskAdapter adapter = new TaskAdapter(this, R.layout.adapter_view_laylout, tasks);
-        ListView listView = findViewById(R.id.listView);
-        listView.setAdapter(adapter);
-        //listView.setAdapter(adapter);
+
+        if(taskTitle.isEmpty() || taskTitle == null) {
+            Toast.makeText(MainActivity.this, "Task Title cannot be empty", Toast.LENGTH_LONG).show();
+        }
+        else if (taskDescription.isEmpty() || taskDescription == null) {
+            Toast.makeText(MainActivity.this, "Task Description cannot be empty", Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            taskTitleEditText.setText("");
+            taskDescriptionEditText.setText("");
+            Task newTask = new Task(taskTitle, taskDescription);
+            tasks.add(newTask);
+            saveData();
+            TaskAdapter adapter = new TaskAdapter(this, R.layout.adapter_view_laylout, tasks);
+            ListView listView = findViewById(R.id.listView);
+            listView.setAdapter(adapter);
+
+        }
 
     }
 
