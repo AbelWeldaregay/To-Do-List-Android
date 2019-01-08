@@ -7,42 +7,60 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="371dp"
-        android:layout_height="440dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"
-        tools:ignore="MissingConstraints">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
-        <EditText
-            android:id="@+id/taskTitleEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Task Title"
-            android:inputType="textPersonName" />
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/taskDescEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Task Description"
-            android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/taskTitleEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:ellipsize="start"
+        android:gravity="center_horizontal"
+        android:hint="Task Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
+    <EditText
+        android:id="@+id/taskDescEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="start"
+        android:gravity="center_horizontal"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Task Description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskTitleEditText"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/addTaskButton"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="addTaskClicked"
-        android:text="Add Task"
+        android:text="Add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+
+
+
+
 </android.support.constraint.ConstraintLayout>
