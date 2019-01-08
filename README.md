@@ -1,5 +1,5 @@
 # To-Do-List-Android
-# Key Features
+## Key Features
 - Add tasks
 - Mark tasks as complete
 - Save tasks in phone storage
