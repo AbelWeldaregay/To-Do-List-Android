@@ -1,4 +1,4 @@
-package com.example.abelweldareguy.todolist;
+package com.weldaregay.abel.todolist;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,4 +1,4 @@
-package com.example.abelweldareguy.todolist;
+package com.weldaregay.abel.todolist;
 
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
