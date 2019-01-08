@@ -13,4 +13,5 @@
         android:text="To Do List"
         android:textColor="#ffffff"
         android:textSize="24sp" />
+
 </LinearLayout>
