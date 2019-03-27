@@ -1,8 +1,10 @@
 # To-Do-List-Android
 ## Key Features
-- Add tasks
-- Mark tasks as complete
-- Save tasks in phone storage
+* Add tasks
+  * Add task title
+  * Add task description
+* Mark tasks as complete
+* Save tasks in phone storage
 
 # Screen Shots: Potrait
 
