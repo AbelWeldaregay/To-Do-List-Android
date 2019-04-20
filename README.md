@@ -21,3 +21,7 @@
 
 ## Available in the Google Play Store
 [Click here to download](https://play.google.com/store/apps/details?id=com.weldaregay.abel.todolist)
+
+## Stats
+- 5 star rating on Google Play Store
+- 10+ installs
