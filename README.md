@@ -6,7 +6,7 @@
 * Mark tasks as complete
 * Save tasks in phone storage
 
-# Screen Shots: Potrait
+# Screen Shots: Portrait
 
 <p float="left">
 <img width=200 src = "https://lh3.googleusercontent.com/ajtXiyroZCvDgSKimh__UONiQvoRjYRq_5XqaKFIsvWhp2fNMn1RA7CuoAoAguFTdg=w2560-h1442-rw">
