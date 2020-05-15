@@ -6,6 +6,26 @@
 * Mark tasks as complete
 * Save tasks in phone storage
 
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+- [Android Studios](https://developer.android.com/studio)
+
+### Installing
+
+1. Open the terminal on Mac or Bash on Windows
+
+2. CD to the desired directory
+
+3. Give the following commands to initialize a git repository and clone the project
+- Note: This assumes you are using https, make sure to update the url if you are using ssh keys
+```
+git init .
+git clone https://github.com/AbelWeldaregay/To-Do-List-Android.git
+```
+
 # Screen Shots: Portrait
 
 <p float="left">
@@ -23,5 +43,4 @@
 [Click here to download](https://play.google.com/store/apps/details?id=com.weldaregay.abel.todolist)
 
 ## Stats
-- 5 star rating on Google Play Store
 - 10+ installs
